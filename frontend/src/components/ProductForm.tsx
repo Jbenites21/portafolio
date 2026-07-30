@@ -32,7 +32,7 @@ export default function ProductForm({ onProductAdded }: { onProductAdded: () => 
     e.preventDefault(); // ¡Vital! Evita que la página web se recargue (el comportamiento por defecto de HTML)
 
     try {
-      const response = await fetch('http://localhost:8088/products/', {
+      const response = await fetch('http://98.84.142.13:8088/products/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json' // Le decimos a FastAPI que le enviamos un JSON
