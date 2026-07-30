@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend-prueba
+    ports:
+      - "8088:8000"
+    volumes:
+    #funciona para proteger el codigo fuente del backend, ya que no se puede modificar desde el contenedor
+      - ./backend:/usr/src/app/backend:ro
+    env_file:
+      - .env
+  frontend:
+    build: ./frontend
+    container_name: frontend-prueba
+    ports:
+      - "4321:4321"
+    volumes:
+    #esto es para que se pueda modificar el codigo fuente del frontend desde el contenedor ya que se crean archivos temporales
+      - ./frontend:/usr/src/app/frontend
+      #esto es para que no haya un choque de archivos
+      - /usr/src/app/frontend/node_modules
+    environment:
+      - ASTRO_TELEMETRY_DISABLED=1
+      #para cuando cuando se trabaje con un entorno automatizado
+      #- CI=true 
+

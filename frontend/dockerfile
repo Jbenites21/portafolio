@@ -1,0 +1,18 @@
+FROM node:24-slim
+
+# Habilitamos corepack para poder usar pnpm directamente
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+WORKDIR /usr/src/app/frontend
+
+# Copiamos primero los archivos de dependencias para aprovechar la caché de Docker
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --config.minimum-release-age=0
+
+# Copiamos el resto del código
+COPY . .
+
+EXPOSE 4321
+
+# Lanzamos Astro exponiendo el host para que sea accesible desde fuera del contenedor
+CMD ["pnpm", "run", "dev", "--host", "0.0.0.0"]

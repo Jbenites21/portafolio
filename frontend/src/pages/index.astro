@@ -1,0 +1,18 @@
+---
+// Importamos tu Layout para el esqueleto de la página
+import Layout from '../layouts/Layout.astro';
+
+// Importamos nuestra pieza de Lego de React
+import ProductCatalog from '../components/ProductCatalog.tsx';
+
+---
+
+<Layout>
+  <div class="p-8">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Mi Catálogo de Cables</h1>
+    
+    <div class="flex justify-center">
+      <ProductCatalog client:load/>
+    </div>
+  </div>
+</Layout>

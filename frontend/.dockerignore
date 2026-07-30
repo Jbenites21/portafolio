@@ -1,0 +1,13 @@
+# Dependencias
+node_modules/
+dist/
+.astro/
+
+# Archivos de entorno (nunca se meten a la imagen por seguridad)
+.env
+.env.*
+
+# Logs y basura del SO
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store

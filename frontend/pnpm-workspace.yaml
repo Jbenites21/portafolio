@@ -1,0 +1,9 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@astrojs/markdown-satteri@0.3.2'
+  - astro@7.0.2
+# pnpm-workspace.yaml para evitar que se purguen los módulos de node_modules de los paquetes que no se están usando en el workspace y el error notty
+confirmModulesPurge: false
+
