@@ -11,7 +11,7 @@ app = FastAPI(title="Electro Cables API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4321"],  # Permitir todas las fuentes para desarrollo
+    allow_origins=["http://98.84.142.13:4321"],  # Permitir todas las fuentes para desarrollo
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
