@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from app.api import product_router
 from app.infraestructure.database import engine, Base
@@ -8,6 +10,8 @@ import app.infraestructure.models  # Importar los modelos para que se registren 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Electro Cables API", version="1.0.0")
+
+Instrumentator().instrument(app).expose(app)
 
 app.add_middleware(
     CORSMiddleware,
