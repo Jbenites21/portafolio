@@ -16,8 +16,8 @@ export default defineConfig({
   },
 
   //configuracion explicitamente para que el servidor escuche en todas las interfaces de red y en el puerto 4321
-  /*server: {
+  server: {
     host: "0.0.0.0",
     port: 4321
-  }*/
+  }
 });
