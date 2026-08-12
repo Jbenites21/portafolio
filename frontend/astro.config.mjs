@@ -10,6 +10,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ['alb-proyecto-1459454180.us-east-1.elb.amazonaws.com']
+    }
   },
 
   //configuracion explicitamente para que el servidor escuche en todas las interfaces de red y en el puerto 4321

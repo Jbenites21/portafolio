@@ -15,7 +15,8 @@ Instrumentator().instrument(app).expose(app)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://98.84.142.13:4321"],  # Permitir todas las fuentes para desarrollo
+    allow_origins=["http://98.84.142.13:4321", 
+                   "http://alb-proyecto-1459454180.us-east-1.elb.amazonaws.com"],  # Permitir todas las fuentes para desarrollo
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

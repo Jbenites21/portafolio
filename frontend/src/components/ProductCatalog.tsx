@@ -10,7 +10,7 @@ export default function ProductCatalog() {
 
   const fetchProducts = async () => {
         try {
-            const response = await fetch('http://98.84.142.13:8088/products/') // 1. Hacer el fetch al backend
+            const response = await fetch('http://alb-proyecto-1459454180.us-east-1.elb.amazonaws.com:8088') // 1. Hacer el fetch al backend
             const data = await response.json()// 2. Convertir la respuesta a JSON
             setProducts(data) // 3. Usar setProducts(data) para guardar los datos en la memoria
         } catch (error) {
