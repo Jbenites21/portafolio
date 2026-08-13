@@ -32,7 +32,7 @@ export default function ProductForm({ onProductAdded }: { onProductAdded: () => 
     e.preventDefault(); // ¡Vital! Evita que la página web se recargue (el comportamiento por defecto de HTML)
 
     try {
-      const response = await fetch('http://alb-proyecto-1459454180.us-east-1.elb.amazonaws.com:8088', {
+      const response = await fetch('http://alb-proyecto-1459454180.us-east-1.elb.amazonaws.com:8088/products/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json' // Le decimos a FastAPI que le enviamos un JSON
